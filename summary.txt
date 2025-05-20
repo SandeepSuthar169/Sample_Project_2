@@ -1,0 +1,10 @@
+1. first crate template of project structure
+2. create invirement {  .ven   }
+
+3. connect data for MongoDB Atlas
+        ->  crate notebook folder inside connect { data } and {  mongodb_demo.ipynb }  notebook with codes.
+
+4. src\exception\__init__.py write Exception of exception code
+5. src\logger\__init__.py writing code of logging coe 
+6. src\utils\main_utils.py write code of logging, SRCException, read multiple YAML file.
+
