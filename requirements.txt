@@ -24,4 +24,6 @@ jinja2
 python-multipart
 from_root
 dill
+dvc
+mlflow
 -e .
