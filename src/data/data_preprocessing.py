@@ -5,6 +5,9 @@ import os
 train_data = pd.read_csv('./data/raw/train.csv')
 test_data = pd.read_csv('./data/raw/test.csv')
 
+
+
+
 def columns_label_encoding(df):
     df['education_of_employee'] = df['education_of_employee'].replace({
     "Bachelor's" : 1,
@@ -34,7 +37,6 @@ train_preprocessing_data = columns_label_encoding(train_data)
 test_preprocessing_data = columns_label_encoding(test_data)
 
 data_path = os.path.join("data", "processed")
-
 os.makedirs(data_path)
 
 train_preprocessing_data.to_csv(os.path.join(data_path, "train_preprocessing.csv" ))

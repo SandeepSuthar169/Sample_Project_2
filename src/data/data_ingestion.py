@@ -7,6 +7,7 @@ from sklearn.model_selection import train_test_split
 
 # Load dataset
 df = pd.read_csv(r"C:/Users/Sande/Desktop/New folder (2)/notebook/Visadataset.csv")
+df = df.drop('case_id', axis=1)
 
 # Split data
 train_data, test_data = train_test_split(df, test_size=0.2, random_state=42)
