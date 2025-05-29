@@ -6,6 +6,9 @@ train_data = pd.read_csv('./data/raw/train.csv')
 test_data = pd.read_csv('./data/raw/test.csv')
 
 
+def drop_columns(df: pd.DataFrame):
+    df = df.dop('case_id', axis= 1)
+    return df
 
 
 def columns_label_encoding(df):
