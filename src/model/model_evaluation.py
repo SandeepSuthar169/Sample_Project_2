@@ -4,7 +4,7 @@ import os
 import pickle
 from sklearn.metrics import accuracy_score, f1_score, recall_score, precision_score
 
-test_data = pd.read_csv("./data/processed/test_preprocessing.csv")
+test_data = pd.read_csv("./data/processed/test_processed.csv")
 
 X_test = test_data.drop(columns=['case_status'])
 y_test = test_data['case_status']

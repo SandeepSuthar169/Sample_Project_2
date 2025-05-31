@@ -9,7 +9,7 @@ from sklearn.compose import ColumnTransformer
 
 
 
-train_data = pd.read_csv("./data/processed/train_preprocessing.csv")
+train_data = pd.read_csv("./data/processed/train_processed.csv")
 
 X_train = train_data.drop(columns=['case_status'])
 y_train = train_data['case_status']

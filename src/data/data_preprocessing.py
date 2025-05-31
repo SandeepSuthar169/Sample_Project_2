@@ -2,16 +2,23 @@ import numpy as np
 import pandas as pd
 import os
 
-train_data = pd.read_csv('./data/raw/train.csv')
-test_data = pd.read_csv('./data/raw/test.csv')
 
 
-def drop_columns(df: pd.DataFrame):
-    df = df.dop('case_id', axis= 1)
-    return df
+
+def load_data(filepath:str) -> pd.DataFrame:
+    return pd.read_csv(filepath) 
+
+
+# def drop_columns(df: pd.DataFrame):
+#     df = df.drop('case_id', axis= 1)
+#     return df
+
 
 
 def columns_label_encoding(df):
+    df=df.drop('case_id', axis = 1)
+
+
     df['education_of_employee'] = df['education_of_employee'].replace({
     "Bachelor's" : 1,
     "Master's": 2,
@@ -35,12 +42,33 @@ def columns_label_encoding(df):
     df['case_status'] = df['case_status'].astype(int)
     return df
 
+def save_data(df: pd.DataFrame, filepath: str) -> None:
+    df.to_csv(filepath, index= False)
 
-train_preprocessing_data = columns_label_encoding(train_data)
-test_preprocessing_data = columns_label_encoding(test_data)
 
-data_path = os.path.join("data", "processed")
-os.makedirs(data_path)
+def main():
+    raw_data_path = "./data/raw"
+    processed_data_path = "./data/processed"
 
-train_preprocessing_data.to_csv(os.path.join(data_path, "train_preprocessing.csv" ))
-test_preprocessing_data.to_csv(os.path.join(data_path, "test_preprocessing.csv"))
+    train_data = load_data(os.path.join(raw_data_path, "train.csv"))
+    test_data =load_data(os.path.join(raw_data_path, "test.csv"))
+
+    train_preprocessing_data = columns_label_encoding(train_data)
+    test_preprocessing_data = columns_label_encoding(test_data)
+
+    os.makedirs(processed_data_path)
+
+    save_data(train_preprocessing_data, os.path.join(processed_data_path,'train_processed.csv'))
+    save_data(test_preprocessing_data, os.path.join(processed_data_path,  'test_processed.csv'))
+
+if __name__ == "__main__":
+    main()
+
+
+
+
+
+
+
+
+
