@@ -9,9 +9,6 @@ def load_data(filepath:str) -> pd.DataFrame:
     return pd.read_csv(filepath) 
 
 
-# def drop_columns(df: pd.DataFrame):
-#     df = df.drop('case_id', axis= 1)
-#     return df
 
 
 
