@@ -23,8 +23,8 @@ stages:
       nfiles: 2
     - path: src/data/data_preprocessing.py
       hash: md5
-      md5: 2d93b03534ca6d47c2b32ea967dce69d
-      size: 3272
+      md5: d92a3299ef3a720628a1607e27d4da23
+      size: 3262
     outs:
     - path: data/processed
       hash: md5
@@ -41,8 +41,8 @@ stages:
       nfiles: 2
     - path: src/model/model_building.py
       hash: md5
-      md5: 323e2a5b7790990d0ddac26531f4de49
-      size: 3437
+      md5: 7ed66d01685815c263c9f59d8ed40cc1
+      size: 5736
     outs:
     - path: model.pkl
       hash: md5
