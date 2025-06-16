@@ -5,6 +5,7 @@ import logging
 
 logger = logging.getLogger('data preprocessing')
 logger.setLevel('DEBUG')
+
 console_handler = logging.StreamHandler()
 console_handler.setLevel('DEBUG')
 
