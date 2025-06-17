@@ -39,8 +39,7 @@ def load_params(params_path:str) :
             max_features = params['model_building']['max_features']
             class_weight = params['model_building']['class_weight']  
             random_state = params['model_building']['random_state']  
-            print("Loaded params:", params) 
-            
+            print("Loaded params:", params)   
             return n_estimators, max_depth, min_samples_leaf, min_samples_split, max_features, class_weight, random_state
     
     except FileNotFoundError as e:
